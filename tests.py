@@ -9,8 +9,9 @@ def test_number_of_passengers():
 
 
 def test_total_fare_paid():
-    # The sum of the fares paid by all passengers. Discussion of floating point
-    # accuracy is welcome but don't feel the need to account for it.
+    # The sum of the fares paid by all passengers. The input data has at most
+    # four decimal places. If you had to round your answer, where did the extra
+    # places come from?
     assert titanic.total_fare_paid() == 28693.9493
 
 
