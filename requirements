@@ -1,1 +1,4 @@
+black
+flake8
 pytest
+reorder-python-imports
