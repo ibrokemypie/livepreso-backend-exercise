@@ -1,3 +1,7 @@
+Please don’t fork this repo using GitHub. It makes it very easy for the next
+person to copy your answers! Instead, clone it (see below) and, if you want to
+ship it back to us using GitHub, add and push to a new remote.
+
 # Summary
 
 This is a job application project. Our aim is that it won't take too much of
@@ -16,6 +20,10 @@ You can run the test suite by running `pytest` once your dependencies are
 installed (see below).
 
 # Getting set up
+
+Please don’t fork this repo using GitHub. It makes it very easy for the next
+person to copy your answers! Instead, clone it as described below and, if you
+want to ship it back to us using GitHub, add and push to a new remote.
 
 You’ll need Python 3 on your system. Then, clone the repo, create a virtual
 environment, activate it and install the dependencies like so:
