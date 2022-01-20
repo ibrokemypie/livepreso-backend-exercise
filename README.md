@@ -17,13 +17,15 @@ installed (see below).
 
 # Getting set up
 
-You’ll need Python 3 on your system. Create a virtual environment, activate
-it and install the dependencies like so:
+You’ll need Python 3 on your system. Then, clone the repo, create a virtual
+environment, activate it and install the dependencies like so:
 
 ```
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements
+$ git clone https://github.com/LivePreso/backend-developer-test.git livepreso-backend-developer-test
+$ cd livepreso-backend-developer-test
+$ python3 -m venv env
+$ source env/bin/activate
+$ pip install -r requirements
 ```
 
 If you already know what you’re doing and have a different approach (poetry,
