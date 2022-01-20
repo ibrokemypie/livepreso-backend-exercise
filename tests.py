@@ -29,7 +29,7 @@ def test_cherbourg_survival_rate():
 def test_passenger_class_by_survival():
     # The three passenger classes had very different survival rates; the more
     # you paid, the better your chances.
-    actual = titanic.surviviest_passenger_class()
+    actual = titanic.passenger_class_by_survival()
     expected = [1, 2, 3]
     assert isinstance(actual, Iterable)
     assert list(actual) == expected

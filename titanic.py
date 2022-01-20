@@ -21,5 +21,5 @@ def cherbourg_survival_rate():
     return 0.5
 
 
-def surviviest_passenger_class():
+def passenger_class_by_survival():
     return [2, 3, 1]
