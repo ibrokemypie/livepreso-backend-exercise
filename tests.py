@@ -24,7 +24,7 @@ def test_cherbourg_survival_rate():
     # Passengers boarded at three different ports before the Atlantic crossing
     # began. Those who boarded at Cherbourg had the best chance of survival at
     # ~55%.
-    assert titanic.cherbourg_survival_rate() == 0.553571
+    assert titanic.cherbourg_survival_rate() == (93 / 168)
 
 
 def test_passenger_class_by_survival():
