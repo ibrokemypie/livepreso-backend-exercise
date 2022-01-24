@@ -10,7 +10,7 @@ import statistics
 class Passenger:
     def __init__(self, row_dict: dict[str, str]) -> None:
         self.id = int(row_dict["PassengerId"])
-        self.survived = bool(row_dict["Survived"])
+        self.survived = bool(int(row_dict["Survived"]))
         self.p_class = int(row_dict["Pclass"])
         self.name = row_dict["Name"]
         self.sex = row_dict["Sex"]
@@ -48,7 +48,15 @@ class Titanic:
         return float(statistics.median(passenger.fare for passenger in self.passengers))
 
     def cherbourg_survival_rate(self) -> float:
-        return 0.5
+        cherbourg_passengers = [
+            passenger for passenger in self.passengers if passenger.embarked == "C"
+        ]
+
+        cherbourg_survivors = [
+            passenger for passenger in cherbourg_passengers if passenger.survived
+        ]
+
+        return len(cherbourg_survivors) / len(cherbourg_passengers)
 
     def passenger_class_by_survival(self) -> list[int]:
         return [2, 3, 1]
