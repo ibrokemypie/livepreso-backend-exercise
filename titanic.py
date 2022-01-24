@@ -3,6 +3,7 @@ Hello from LivePreso :) This is the file you should be editing. Good luck!
 """
 
 import csv
+import decimal
 
 
 class Passenger:
@@ -16,7 +17,7 @@ class Passenger:
         self.sib_sp = int(row_dict["SibSp"])
         self.parch = int(row_dict["Parch"])
         self.ticket = row_dict["Ticket"]
-        self.fare = float(row_dict["Fare"])
+        self.fare = decimal.Decimal(row_dict["Fare"])
         self.cabin = row_dict["Cabin"]
         self.embarked = row_dict["Embarked"]
 
@@ -39,8 +40,8 @@ class Titanic:
     def number_of_passengers(self) -> int:
         return len(self.passengers)
 
-    def total_fare_paid(self) -> int:
-        return 30000
+    def total_fare_paid(self) -> float:
+        return float(sum(passenger.fare for passenger in self.passengers))
 
     def median_fare(self) -> int:
         return 15
