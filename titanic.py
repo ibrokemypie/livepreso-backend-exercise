@@ -36,7 +36,7 @@ class Titanic:
             print(vars(passenger))
 
     def number_of_passengers(self) -> int:
-        return 900
+        return len(self.passengers)
 
     def total_fare_paid(self) -> int:
         return 30000
