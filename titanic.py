@@ -10,26 +10,28 @@ import statistics
 
 class Passenger:
     def __init__(self, row_dict: dict[str, str]) -> None:
+        self.name = row_dict["Name"]
+        self.sex = row_dict["Sex"]
+        self.cabin = row_dict["Cabin"]
+        self.embarked = row_dict["Embarked"]
+        self.ticket = row_dict["Ticket"]
+
+        self.sib_sp = int(row_dict["SibSp"]) if not row_dict["SibSp"] == "" else None
+        self.parch = int(row_dict["Parch"]) if not row_dict["Parch"] == "" else None
+        self.p_class = int(row_dict["Pclass"]) if not row_dict["Pclass"] == "" else None
+
         self.id = (
             int(row_dict["PassengerId"]) if not row_dict["PassengerId"] == "" else None
         )
         self.survived = (
             bool(int(row_dict["Survived"])) if not row_dict["Survived"] == "" else None
         )
-        self.p_class = int(row_dict["Pclass"]) if not row_dict["Pclass"] == "" else None
-        self.name = row_dict["Name"]
-        self.sex = row_dict["Sex"]
         self.age = (
             decimal.Decimal(row_dict["Age"]) if not row_dict["Age"] == "" else None
         )
-        self.sib_sp = int(row_dict["SibSp"]) if not row_dict["SibSp"] == "" else None
-        self.parch = int(row_dict["Parch"]) if not row_dict["Parch"] == "" else None
-        self.ticket = row_dict["Ticket"]
         self.fare = (
             decimal.Decimal(row_dict["Fare"]) if not row_dict["Fare"] == "" else None
         )
-        self.cabin = row_dict["Cabin"]
-        self.embarked = row_dict["Embarked"]
 
 
 class Titanic:
