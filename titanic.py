@@ -49,12 +49,3 @@ class Titanic:
 
     def passenger_class_by_survival(self) -> list[int]:
         return [2, 3, 1]
-
-
-def main():
-    titanic = Titanic("./titanic.csv")
-    titanic.print_passengers()
-
-
-if __name__ == "__main__":
-    main()
