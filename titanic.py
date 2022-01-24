@@ -4,6 +4,7 @@ Hello from LivePreso :) This is the file you should be editing. Good luck!
 
 import csv
 import decimal
+import statistics
 
 
 class Passenger:
@@ -43,8 +44,8 @@ class Titanic:
     def total_fare_paid(self) -> float:
         return float(sum(passenger.fare for passenger in self.passengers))
 
-    def median_fare(self) -> int:
-        return 15
+    def median_fare(self) -> float:
+        return float(statistics.median(passenger.fare for passenger in self.passengers))
 
     def cherbourg_survival_rate(self) -> float:
         return 0.5
