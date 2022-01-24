@@ -2,6 +2,7 @@
 Hello from LivePreso :) This is the file you should be editing. Good luck!
 """
 
+from collections import Counter
 import csv
 import decimal
 import statistics
@@ -59,4 +60,20 @@ class Titanic:
         return len(cherbourg_survivors) / len(cherbourg_passengers)
 
     def passenger_class_by_survival(self) -> list[int]:
-        return [2, 3, 1]
+        passengers_by_class = Counter(
+            passenger.p_class for passenger in self.passengers
+        )
+
+        survivors_by_class = Counter(
+            passenger.p_class for passenger in self.passengers if passenger.survived
+        )
+
+        # Create a list of tuples containing the class and the percentage of passengers from that class who
+        # survived
+        survival_percentage_by_class = [
+            (p_class, survivors_by_class[p_class] / total)
+            for (p_class, total) in passengers_by_class.items()
+        ]
+        survival_percentage_by_class.sort(key=lambda x: x[1], reverse=True)
+
+        return [item[0] for item in survival_percentage_by_class]
