@@ -22,9 +22,10 @@ class Passenger:
 
 
 class Titanic:
-    def __init__(self, input_file: str) -> None:
+    def __init__(self) -> None:
         self.passengers = list[Passenger]()
 
+    def load_csv(self, input_file: str) -> None:
         with open(input_file, newline="") as file:
             file_reader = csv.DictReader(file)
 

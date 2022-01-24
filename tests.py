@@ -6,7 +6,10 @@ from titanic import Titanic
 
 @pytest.fixture
 def test_titanic() -> Titanic:
-    return Titanic("./titanic.csv")
+    new_titanic = Titanic()
+    new_titanic.load_csv("./titanic.csv")
+
+    return new_titanic
 
 
 def test_number_of_passengers(test_titanic: Titanic):
