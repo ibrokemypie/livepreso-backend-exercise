@@ -35,10 +35,6 @@ class Titanic:
             for row_dict in file_reader:
                 self.passengers.append(Passenger(row_dict))
 
-    def print_passengers(self) -> None:
-        for passenger in self.passengers:
-            print(vars(passenger))
-
     def number_of_passengers(self) -> int:
         return len(self.passengers)
 
